@@ -5,8 +5,8 @@ with open('reviews.txt', 'r') as f:
     for line in f:
         data.append(line)
         count += 1
-        if count %1000 == 0:
-            print(len(data))
+        if count %10000 == 0:
+         print(len(data))
 
 print('檔案讀取結束,總共有', len(data),"筆資料")
 
@@ -15,3 +15,10 @@ for d in data:
     sum_len += len(d)  #sum_lem = sum_len + len(d)
     
 print ('平均長度為', sum_len / len(data))
+
+new = []
+for d in data:
+    if len(d) < 100:
+        new.append(d)
+print('一共有' ,len(new),'筆資料長度小於100')
+print(new[0])
